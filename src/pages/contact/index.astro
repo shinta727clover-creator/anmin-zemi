@@ -1,29 +1,46 @@
 ---
 import Base from '../../layouts/Base.astro';
+
 const formUrl = 'https://forms.gle/LsPTH2DjpEBUVcT5A';
+const embedUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSeTKrSyKAV5OPQQDkZBA_3hO-TCZrlMazzmwA20668Qfpz4kA/viewform?embedded=true';
 ---
 <Base
   title="お問い合わせ｜安眠ゼミ公式サイト"
-  description="安眠ゼミの作品・キャラクター・公式サイトに関するお問い合わせはこちら。Googleフォームからメッセージをお送りいただけます。"
+  description="安眠ゼミの作品・キャラクター・公式サイトへのお問い合わせ。ページ内のGoogleフォームからメッセージを送れます。"
 >
   <div class="wrap page narrow">
     <nav class="breadcrumbs" aria-label="パンくず">
       <a href="/">ホーム</a> / お問い合わせ
     </nav>
     <h1>お問い合わせ</h1>
-    <p>安眠ゼミの漫画やキャラクター、公式サイトへのご連絡を受け付けています。</p>
+    <p>安眠ゼミの漫画やキャラクター、公式サイトについてのご連絡はこちらからどうぞ。</p>
 
     <section class="contact-google" aria-labelledby="form-heading">
       <div class="contact-google-symbol" aria-hidden="true">☾</div>
       <h2 id="form-heading">夢見町へメッセージを送る</h2>
-      <p>下のボタンからお問い合わせフォームを開いてください。</p>
-      <a class="button contact-google-button" href={formUrl} target="_blank" rel="noopener noreferrer">
-        Googleフォームを開く ↗
+      <p>下のGoogleフォームからお問い合わせいただけます。</p>
+
+      <div class="contact-google-frame">
+        <iframe
+          title="安眠ゼミ公式サイト お問い合わせ Googleフォーム"
+          src={embedUrl}
+          width="640"
+          height="968"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+        >
+          Googleフォームを読み込んでいます。
+        </iframe>
+      </div>
+      <p class="contact-google-note">
+        表示がうまくいかない場合は、Googleフォームを別タブで開いてください。
+      </p>
+      <a class="contact-google-fallback" href={formUrl} target="_blank" rel="noopener noreferrer">
+        Googleフォームを別タブで開く ↗
       </a>
-      <p class="contact-google-note">Googleフォームが別のタブで開きます。Googleのサービスに移動して回答を送信します。</p>
     </section>
 
     <p class="muted">お問い合わせ内容を確認しますが、すべてのご連絡への返信をお約束するものではありません。</p>
-    <p class="muted">フォームの入力情報の取り扱いについては <a href="/privacy/">プライバシーポリシー</a> をご覧ください。</p>
+    <p class="muted">Googleフォームの利用にあたり <a href="/privacy/">プライバシーポリシー</a> もご確認ください。</p>
   </div>
 </Base>
