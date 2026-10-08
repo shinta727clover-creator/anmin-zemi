@@ -1,0 +1,27 @@
+---
+interface Props {
+  theme?: 'light' | 'dark';
+  ariaLabel?: string;
+}
+const { theme = 'light', ariaLabel = '安眠ゼミの公式SNS' } = Astro.props;
+---
+<nav class={`social-links social-links--${theme}`} aria-label={ariaLabel}>
+  <a class="social-link" href="https://www.instagram.com/anminzemi/" target="_blank" rel="noopener noreferrer" aria-label="安眠ゼミ公式Instagram（新しいタブで開く）">
+    <svg class="social-instagram-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" stroke="currentColor" stroke-width="2"/>
+      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+      <circle cx="17.7" cy="6.5" r="1.2" fill="currentColor"/>
+    </svg>
+    <span>Instagram</span>
+    <span class="social-link-handle">@anminzemi</span>
+    <span class="social-link-arrow" aria-hidden="true">↗</span>
+  </a>
+  <a class="social-link" href="https://x.com/anminzemi" target="_blank" rel="noopener noreferrer" aria-label="安眠ゼミ公式X（新しいタブで開く）">
+    <svg class="social-x-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M18.901 2h3.1l-6.776 7.745L23.195 22h-6.24l-4.888-7.426L5.57 22H2.47l7.248-8.284L1.805 2h6.4l4.419 6.735L18.901 2Zm-1.09 18h1.718L7.275 3.895H5.43L17.811 20Z"/>
+    </svg>
+    <span>X</span>
+    <span class="social-link-handle">@anminzemi</span>
+    <span class="social-link-arrow" aria-hidden="true">↗</span>
+  </a>
+</nav>
