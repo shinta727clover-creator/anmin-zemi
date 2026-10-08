@@ -3,7 +3,7 @@ import { glob } from 'astro/loaders';
 const comics = defineCollection({
   loader: glob({pattern:'**/*.md', base:'./src/content/comics'}),
   schema:z.object({
-    number:z.coerce.number().int().positive(),
+    number:z.coerce.number().int().nonnegative(),
     title:z.string().min(1),
     date:z.coerce.date(),
     description:z.string().min(1),
