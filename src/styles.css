@@ -43,3 +43,13 @@
   .contact-google-frame{border-radius:10px}
   .contact-google-frame iframe{height:1140px}
 }
+
+/* GA4 consent — lightweight, opt-in by default, adjustable in footer */
+.analytics-consent[hidden]{display:none!important}
+.analytics-consent{position:fixed;z-index:100;left:max(12px,calc((100vw - 940px)/2));right:max(12px,calc((100vw - 940px)/2));bottom:16px;display:flex;gap:24px;align-items:center;justify-content:space-between;padding:18px 22px;background:#172747;color:#fff9f0;border:1px solid #6680a4;border-radius:18px;box-shadow:0 12px 42px #101b3473}
+.analytics-consent-copy{min-width:0}.analytics-consent-copy strong{font-size:.96rem;color:#fbe39a}.analytics-consent-copy p{margin:4px 0 0;font-size:.84rem;line-height:1.6;color:#e1e8f3}.analytics-consent-copy a{text-underline-offset:3px}
+.analytics-consent-actions{display:flex;gap:10px;flex-shrink:0}.analytics-consent-actions button{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;border-radius:999px;padding:10px 16px;min-height:44px}
+.analytics-consent-decline{background:transparent;color:#fff9f0;border:1px solid #aabbd0}.analytics-consent-accept{background:#f99764;color:#241b1a;border:1px solid #f99764}
+.analytics-consent button:focus-visible,.analytics-preferences:focus-visible{outline:3px solid #80c8ee;outline-offset:3px}
+.analytics-footer-control{margin:14px 0 0}.analytics-preferences{background:none;color:#fff9f0;border:0;padding:4px 0;text-decoration:underline;text-underline-offset:3px;font:inherit;font-size:.86rem;cursor:pointer}
+@media(max-width:720px){.analytics-consent{left:12px;right:12px;bottom:12px;padding:16px;flex-direction:column;align-items:stretch;gap:12px}.analytics-consent-actions{justify-content:stretch}.analytics-consent-actions button{flex:1}}
