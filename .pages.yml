@@ -1,0 +1,66 @@
+# Pages CMS: https://pagescms.org/ (GitHub login, no hosted CMS to maintain)
+media:
+  input: public/comics
+  output: /comics
+  extensions: [png, jpg, jpeg, webp, avif]
+  rename: safe
+content:
+  - name: comics
+    label: 漫画
+    type: collection
+    path: src/content/comics
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    exclude: [EXAMPLE.md]
+    view:
+      primary: number
+      fields: [number, title, date, status]
+      sort: number
+      order: desc
+    fields:
+      - name: number
+        label: 話数（数字・重複不可）
+        type: number
+        required: true
+      - name: title
+        label: タイトル
+        type: string
+        required: true
+      - name: date
+        label: 公式サイト公開日
+        type: date
+        required: true
+      - name: description
+        label: 説明文（SEOにも使用）
+        type: text
+        required: true
+      - name: images
+        label: 漫画画像（順番に表示）
+        type: image
+        required: true
+        options:
+          multiple:
+            max: 20
+      - name: characters
+        label: 登場キャラクター（anmin / fumin）
+        type: string
+        list: true
+      - name: tags
+        label: タグ
+        type: string
+        list: true
+      - name: socialDate
+        label: SNS公開予定日（任意）
+        type: date
+      - name: status
+        label: 公開状態
+        type: select
+        options:
+          values: [draft, published]
+        default: draft
+      - name: ogImage
+        label: シェア画像（任意）
+        type: image
+      - name: body
+        label: 制作メモ
+        type: rich-text
