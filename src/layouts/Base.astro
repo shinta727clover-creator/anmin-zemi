@@ -1,0 +1,10 @@
+---
+import '../styles.css';
+const {title='安眠ゼミ｜公式サイト',description='夢見町で暮らす、眠ることが大好きな安眠ゼミ。短編漫画を公式サイトで先行公開。',image='/assets/og-default.svg'}=Astro.props;
+const gaId=import.meta.env.PUBLIC_GA_ID;
+const canonical=new URL(Astro.url.pathname,Astro.site).toString();
+const og=new URL(image,Astro.site).toString();
+---
+<!doctype html><html lang="ja"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><meta name="theme-color" content="#101B34"/><title>{title}</title><meta name="description" content={description}/><link rel="canonical" href={canonical}/><meta property="og:type" content="website"/><meta property="og:locale" content="ja_JP"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:url" content={canonical}/><meta property="og:image" content={og}/><meta name="twitter:card" content="summary_large_image"/><link rel="alternate" type="application/rss+xml" title="安眠ゼミ 新着漫画" href="/rss.xml"/>{gaId&&<script is:inline define:vars={{gaId}}>
+// Enable only after privacy/cookie consent requirements have been implemented.
+</script>}</head><body><a class="skip" href="#main">本文へスキップ</a><header class="header"><div class="wrap nav"><a class="brand" href="/"><img src="/images/anmin-official-logo.png" alt="安眠ゼミ" width="158" height="57" style="width:158px;height:auto;display:block" /></a><nav aria-label="メインナビゲーション"><a href="/">ホーム</a><a href="/comic/">漫画</a><a href="/characters/">なかまたち</a><a href="/yumemicho/">夢見町</a><a href="/stickers/">スタンプ</a></nav></div></header><main id="main"><slot/></main><footer class="footer"><div class="wrap"><p>がんばりすぎなくてもいい。とりあえず今日は寝よう。</p><nav aria-label="フッターナビゲーション"><a href="/about/">安眠ゼミについて</a><a href="/operator/">運営者情報</a><a href="/privacy/">プライバシー</a><a href="/terms/">利用規約</a><a href="/advertising/">広告について</a><a href="/contact/">お問い合わせ</a></nav><small>© 2026 しんたろー / 安眠ゼミ</small></div></footer></body></html>

@@ -1,0 +1,7 @@
+---
+import Base from '../../../layouts/Base.astro';
+import {publishedComics,comicUrl} from '../../../lib/comics';
+export async function getStaticPaths(){const comics=await publishedComics();const size=24;return Array.from({length:Math.max(0,Math.ceil(comics.length/size)-1)},(_,i)=>({params:{page:String(i+2)},props:{items:comics.slice((i+1)*size,(i+2)*size),total:Math.ceil(comics.length/size)}}));}
+const {items,total}=Astro.props;const page=Number(Astro.params.page);
+---
+<Base title={`漫画一覧 ${page}ページ｜安眠ゼミ公式サイト`}><div class="wrap page"><h1>漫画一覧・{page}ページ</h1><div class="cards">{items.map(c=><article class="card"><a href={comicUrl(c.data.number)}>{c.data.images[0]&&<img src={c.data.images[0]} alt="" loading="lazy" width="600" height="450"/>}<p>第{c.data.number}話</p><h2>{c.data.title}</h2></a></article>)}</div><nav class="reader-nav" aria-label="漫画一覧ページ"> <a href={page===2?'/comic/':`/comic/page/${page-1}/`}>← 前のページ</a><span>{page}/{total}</span>{page<total&&<a href={`/comic/page/${page+1}/`}>次のページ →</a>}</nav></div></Base>

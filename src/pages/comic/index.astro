@@ -1,0 +1,6 @@
+---
+import Base from '../../layouts/Base.astro';
+import {publishedComics,comicUrl} from '../../lib/comics';
+const comics=await publishedComics(); const items=comics.slice(0,24); const pages=Math.ceil(comics.length/24);
+---
+<Base title="漫画一覧｜安眠ゼミ公式サイト"><div class="wrap page"><h1>漫画一覧</h1><p>夢見町の短編漫画。新しい順に読めます。</p>{items.length?<div class="cards">{items.map(c=><article class="card"><a href={comicUrl(c.data.number)}>{c.data.images[0]&&<img src={c.data.images[0]} alt="" loading="lazy" width="600" height="450"/>}<p>第{c.data.number}話</p><h2>{c.data.title}</h2></a></article>)}</div>:<div class="empty">漫画の公開準備中です。</div>}{pages>1&&<p><a class="button" href="/comic/page/2/">次のページ →</a></p>}</div></Base>

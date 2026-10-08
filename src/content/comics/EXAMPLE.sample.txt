@@ -1,0 +1,16 @@
+---
+number: 1
+title: "第1話のタイトルを入力"
+date: 2026-10-08
+description: "この漫画の紹介文を入力"
+images:
+  - /comics/001/01.webp
+characters:
+  - anmin
+tags:
+  - 日常
+status: draft
+# socialDate: 2026-10-10
+# ogImage: /comics/001/og.webp
+---
+漫画の紹介メモ（任意）。status を published に変更すると公開対象になります。
