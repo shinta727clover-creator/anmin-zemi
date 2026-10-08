@@ -2,7 +2,7 @@
 import '../styles.css';
 const {title='安眠ゼミ｜公式サイト',description='夢見町で暮らす、眠ることが大好きな安眠ゼミ。短編漫画を公式サイトで先行公開。',image='/assets/og-default.svg'}=Astro.props;
 const gaId=import.meta.env.PUBLIC_GA_ID;
-const searchVerification=import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const searchVerification=import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION || 'HtU6lC1smRNNeVXpdXbK7o1NdyxTOOzYCGea8cfSt40';
 const canonical=new URL(Astro.url.pathname,Astro.site).toString();
 const og=new URL(image,Astro.site).toString();
 ---
